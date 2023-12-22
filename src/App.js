@@ -42,35 +42,35 @@ export default function App() {
           setTodo("");
         }}
       >
-        Kaydet
+        SAVE
       </button>
       <table>
         <tbody>
-          {state.map((todoz) => (
-            <tr key={"tr" + todoz.id}>
-              {!todoz.toggle ? (
-                <td key={"td-1-false" + todoz.id}>{todoz.todo}</td>
+          {state.map((todo) => (
+            <tr key={"tr" + todo.id}>
+              {!todo.toggle ? (
+                <td key={"td-1-false" + todo.id}>{todo.todo}</td>
               ) : (
-                <td key={"td-1-true" + todoz.id}>
-                  <del>{todoz.todo}</del>
+                <td key={"td-1-true" + todo.id}>
+                  <del>{todo.todo}</del>
                 </td>
               )}
-              <td key={"td-2" + todoz.id}>
+              <td key={"td-2" + todo.id}>
                 <button
                   onClick={() =>
-                    dispatch({ type: "del", payload: { id: todoz.id } })
+                    dispatch({ type: "del", payload: { id: todo.id } })
                   }
                 >
-                  SİL
+                  DELETE
                 </button>
               </td>
-              <td key={"td-3" + todoz.id}>
+              <td key={"td-3" + todo.id}>
                 <button
                   onClick={() =>
-                    dispatch({ type: "toggle", payload: { id: todoz.id } })
+                    dispatch({ type: "toggle", payload: { id: todo.id } })
                   }
                 >
-                  ÇİZ
+                  TOGGLE
                 </button>
               </td>
             </tr>
